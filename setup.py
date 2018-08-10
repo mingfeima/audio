@@ -14,6 +14,6 @@ setup(
     packages=find_packages(exclude=["build"]),
     ext_modules=[
         CppExtension(
-            '_torch_sox', ['torchaudio/torch_sox.cpp'], libraries=['sox']),
+            '_torch_sox', ['torchaudio/torch_sox.cpp'], include_dirs=['/usr/include/sox'], libraries=['sox'], library_dirs=['/usr/lib64']),
     ],
     cmdclass={'build_ext': BuildExtension})
